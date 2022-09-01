@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.kayhan.toptaltest.views.PostFragment"
+        android:label="PostFragment" >
+        <action
+            android:id="@+id/action_postFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.kayhan.toptaltest.views.PostDetailsFragment"
+        android:label="PostDetailsFragment" >
+        <action
+            android:id="@+id/action_postDetailsFragment_to_imageApiFragment"
+            app:destination="@id/imageApiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageApiFragment"
+        android:name="com.kayhan.toptaltest.views.ImageApiFragment"
+        android:label="ImageApiFragment" />
+</navigation>
