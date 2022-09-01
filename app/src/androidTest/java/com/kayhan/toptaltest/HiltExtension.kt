@@ -29,12 +29,14 @@ inline fun <reified T : Fragment> launchFragmentInHiltContainer(
     factory: FragmentFactory,
     crossinline action: T.() -> Unit = {}
 ) {
+
     val startActivityIntent = Intent.makeMainActivity(
         ComponentName(
             ApplicationProvider.getApplicationContext(),
             HiltTestActivity::class.java
         )
-    ).putExtra(EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY, themeResId)
+    )
+        .putExtra(EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY, themeResId)
 
     ActivityScenario.launch<HiltTestActivity>(startActivityIntent).onActivity { activity ->
         activity.supportFragmentManager.fragmentFactory = factory
