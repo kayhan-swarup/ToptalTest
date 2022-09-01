@@ -51,7 +51,7 @@ class PostRecyclerAdapter @Inject constructor(
         val art = posts[position]
         holder.itemView.apply {
             glide.load(art.imageUrl).into(imageView)
-            nameText.text = "Title: ${art.title}"
+            nameText.text = "${art.title}"
             artistNameText.text = "Author: ${art.author}"
             yearText.text = "Location: ${art.location}"
         }
